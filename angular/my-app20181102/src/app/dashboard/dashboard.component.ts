@@ -6,7 +6,8 @@ import { share } from 'rxjs/operators';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: [ './dashboard.component.scss' ]
+  styleUrls: [ './dashboard.component.scss' ],
+  
 })
 export class DashboardComponent implements OnInit, OnDestroy {
   private _testGetOrSet:any = 0;

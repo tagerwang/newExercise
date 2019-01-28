@@ -28,6 +28,9 @@ import { DirectDirective } from './direct.directive';
     // DashboardComponent,
     // HeroSearchComponent
   ],
+  exports: [
+    PipesPipe
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
