@@ -14,24 +14,25 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessageComponent } from './message/message.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
-import { PipesPipe } from './pipes.pipe';
+// import { PipesPipe } from './pipes.pipe';
 import { DirectDirective } from './direct.directive';
-
+import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
     // HeroesComponent,
     HeroDetailComponent,
     MessageComponent,
-    PipesPipe,
+    // PipesPipe,
     DirectDirective,
     // DashboardComponent,
     // HeroSearchComponent
   ],
   exports: [
-    PipesPipe
+    // PipesPipe
   ],
   imports: [
+    SharedModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
