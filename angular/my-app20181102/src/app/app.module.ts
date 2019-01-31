@@ -15,7 +15,6 @@ import { MessageComponent } from './message/message.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 // import { PipesPipe } from './pipes.pipe';
-import { DirectDirective } from './direct.directive';
 import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { SharedModule } from './shared/shared.module';
     HeroDetailComponent,
     MessageComponent,
     // PipesPipe,
-    DirectDirective,
     // DashboardComponent,
     // HeroSearchComponent
   ],
