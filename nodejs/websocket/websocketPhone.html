@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>websocket</title>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"></script>
+    <script src="js/vconsole.min.js"></script>
+</head>
+<body>
+        <div id="btnConnect">btnConnect</div>
+        <div id="messageSpan"></div>
+    <div>Echo Test</div>
+    <input type="text" id="sendTxt">
+    <button id="sendBtn">发送</button>
+    <div id="recv"></div>
+    <script>
+                var vConsole = new VConsole();
+                     $("#btnConnect").click(function  ()  {
+                            $("#messageSpan").text("连接...");
+                            var  _port  =  window.location.port;
+                            if  (_port  ==  "")  {
+                                    _port  =  "80";
+                            }
+                            ws  =  new  WebSocket("ws://localhost:8001");
+                            ws.onopen  =  function  ()  {
+                                    $("#messageSpan").text("连接成功!");
+                            };
+                            ws.onmessage  =  function  (result)  {
+
+                            };
+                            ws.onerror  =  function  (error)  {
+                                    $("#messageSpan").text(error.data);
+                            };
+                            ws.onclose  =  function  ()  {
+                                    $("#messageSpan").text("连接关闭!");
+                            };
+                    });
+    // var websocket=new WebSocket("ws://echo.websocket.org/")
+    // websocket.onopen=function(){//直接建立连接
+    //     console.log('websocket open')
+    //     document.getElementById("recv").innerHTML="connect"
+    // }
+    // websocket.onclose=function(){//关闭连接
+    //     console.log('websocket close')
+    // }
+    // websocket.onmessage=function(e){//client发送信息时触发；
+    //     console.log(e.data,e)
+    //     document.getElementById('recv').innerHTML=e.data
+    // }
+    // document.getElementById('sendBtn').onclick=function(){//client发送信息
+    //     var txt=document.getElementById('sendTxt').value;
+    //     websocket.send(txt)
+    // }
+    </script>
+</body>
+</html>

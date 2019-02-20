@@ -1,0 +1,22 @@
+doctype html
+html
+    head
+        include style
+        - var jades="Hello jade studys"
+        - var hello =123
+        title #{jades.toUpperCase()}
+    body
+
+
+        :markdown
+            Hi, **markdown** [link](http://www.baidu.com)
+        #hello #{hello+course}
+            |123456
+            span 123
+            block content
+            block hello 
+                #div
+        p: a.btn.btn-primary
+        冒号
+            
+            

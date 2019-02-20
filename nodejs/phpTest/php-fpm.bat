@@ -1,0 +1,1 @@
+D:\software\php-7.1.14-Win32-VC14-x64thread\php-cgi.exe  -b 127.0.0.1:9000 -c D:\software\php-7.1.14-Win32-VC14-x64thread\php.ini

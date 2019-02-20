@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+	<style>
+*
+{
+padding: 0;
+margin: 0;
+}
+#floatBoxBg
+{
+display: none;
+width: 100%;
+height: 100%;
+background: #000;
+position: fixed !important; /*ie7 ff*/
+position: absolute;
+top: 0;
+left: 0;
+filter: alpha(opacity=0);
+opacity: 0;
+}
+.floatBox
+{
+border: #9CC95F 5px solid;
+position: fixed !important; /*ie7 ff*/
+position: absolute;
+top: 50px;
+left: 40%;
+background: #fff;
+display: none;
+}
+.floatBox .title
+{
+height: 23px;
+padding: 7px 10px 0;
+color: #fff;
+background-attachment: scroll;
+background: #9CC95F;
+background-repeat: repeat-x;
+background-position: 0px 0px;
+}
+.floatBox .title h4
+{
+float: left;
+padding: 0;
+margin: 0;
+font-size: 14px;
+line-height: 16px;
+}
+.floatBox .title span
+{
+float: right;
+cursor: pointer;
+}
+.floatBox .content
+{
+padding: 20px 15px;
+background: #fff;
+overflow-x: hidden;
+overflow-y: auto;
+}
+#closeDialog
+{
+font-size: 20px;
+font-weight: bold;
+color: #000;
+margin-top: -5px;
+}
+#closeDialog:hover
+{
+font-size: 20px;
+font-weight: bold;
+color: #fff;
+margin-top: -5px;
+}
+	</style>
+   <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+</head>
+<body>
+<div id="cs">
+123
+</div>
+<script>
+(function ($) {
+$.fn.PopDialog = function (options) {
+var defaults = {
+Event: "click", //触发响应事件
+title: "title", //弹出层的标题
+type: "text", //弹出层类型(text、容器ID、URL、Iframe)
+content: "content", //弹出层的内容(text文本、容器ID名称、URL地址、Iframe的地址)
+width: 500, //弹出层的宽度
+height: 400, //弹出层的高度
+scrollTop: 200, //层滑动的高度也就是弹出层时离顶部滑动的距离
+isAuto: false, //是否自动弹出
+time: 2000, //设置自动弹出层时间，前提是isAuto=true
+isClose: false, //是否自动关闭 
+timeOut: 2000 //设置自动关闭时间，前提是isClose=true
+};
+var options = $.extend(defaults, options);
+$("body").prepend("<div id='floatBoxBg'></div><div id='floatBox' class='floatBox'><div class='title'><h4></h4><span id='closeDialog'>X</span></div><div class='content'></div></div>");
+var $this = $(this); //当然响应事件对象
+var $blank = $("#floatBoxBg"); //遮罩层对象
+var $title = $("#floatBox .title h4"); //弹出层标题对象
+var $content = $("#floatBox .content"); //弹出层内容对象
+var $dialog = $("#floatBox"); //弹出层对象
+var $close = $("#closeDialog"); //关闭层按钮对象
+var stc, st;
+if ($.browser.msie && ($.browser.version == "6.0") && !$.support.style) {//判断IE6
+$blank.css({ height: $(document).height(), width: $(document).width() });
+}
+$close.live("click", function () {
+$blank.animate({ opacity: "0" }, "normal", function () { $(this).hide(); });
+$dialog.animate({ top: ($(document).scrollTop() - parseInt(options.height)) + "px" }, "normal", function () { $(this).hide(); });
+if (st) {
+clearTimeout(st); //清除定时器
+}
+if (stc) {
+clearTimeout(stc); //清除定时器
+}
+});
+$content.css("height", parseInt(options.height) - 70);
+//文本框绑定事件
+$this.live(options.Event, function (e) {
+$title.html(options.title);
+switch (options.type) {
+case "url": //当类型是地址的时候 
+$content.ajaxStart(function () {
+$(this).html("loading...");
+});
+$.get(options.content, function (html) {
+$content.html(html);
+});
+break;
+case "text": //当类型是文本的时候
+$content.html(options.content);
+break;
+case "id": //当类型是容器ID的时候
+$content.html($("#" + options.content + "").html());
+break;
+case "iframe": //当类型是Iframe的时候
+$content.html("<iframe src=\"" + options.content + "\" width=\"100%\" height=\"" + (parseInt(options.height) - 70) + "px" + "\" scrolling=\"auto\" frameborder=\"0\" marginheight=\"0\" marginwidth=\"0\"></iframe>");
+break;
+default: //默认情况下的时候
+$content.html(options.content);
+break;
+}
+$blank.show();
+$blank.animate({ opacity: "0.5" }, "normal");
+$dialog.css({ display: "block", left: (($(document).width()) / 2 - (parseInt(options.width) / 2)) + "px", top: ($(document).scrollTop() - parseInt(options.height)) + "px", width: options.width, height: options.height });
+$dialog.animate({ top: options.scrollTop + "px" }, "normal");
+if (options.isClose) {
+stc = setTimeout(function () {
+$close.trigger("click");
+clearTimeout(stc);
+}, options.timeOut);
+}
+});
+if (options.isAuto) {
+st = setTimeout(function () {
+$this.trigger(options.Event);
+clearTimeout(st);
+}, options.time);
+}
+}
+
+    })(jQuery);
+
+
+    $("#cs").PopDialog({
+Event: "click", //触发响应事件
+title: "弹出层插件", //弹出层的标题
+type: "id", //弹出层类型(text、容器ID、URL、Iframe)
+content: "detail", //弹出层的内容获取(text文本、容器ID名称、URL地址、Iframe的地址)
+width: 500, //弹出层的宽度
+height: 300, //弹出层的高度 
+scrollTop: 200, //层滑动的高度也就是弹出层时离顶部滑动的距离
+isAuto: true, //是否自动弹出
+time: 2000, //设置弹出层时间，前提是isAuto=true
+isClose: false, //是否自动关闭 
+timeOut: 5000 //设置自动关闭时间，前提是isClose=true 
+});
+</script>
+<!-- <script src='lib/es5.js'></script> -->
+</body>
+</html>

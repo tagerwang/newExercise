@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Tetris</title>
+</head>
+
+<body>
+    <div class="game" id="game">
+
+    </div>
+    <div class="next" id="next"></div>
+    <div class="info">
+        <button id="pause">暂停</button>
+        <button id="start">重新开始</button>
+        <div>已用时：
+            <span id="time">0</span>s</div>
+        <div>已得分：
+            <span id="score">0</span>分</div>
+            <div id="local_gameover"></div>
+    </div>
+    <div id="butGroup">
+        <button id="butUp">&uarr; </button>
+        <button id="butDown">&darr;</button>
+        <button id="butFall">&darr;&darr; </button>
+        <button id="butLeft">&larr;</button>
+        <button id="butRight">&rarr; </button>
+    </div>
+    <div class="tips">
+        <p>请用方向键来操作游戏</p>
+        <p>&uarr; 旋转</p>
+        <p>&larr; 左移</p>
+        <p>&rarr; 右移</p>
+        <p>&darr; 下移</p>
+        <p>&darr;空格 坠落</p>
+        <p>回车 暂停或继续</p>
+        <!-- <p>&uarr; 旋转、 &larr; 左移、&rarr; 右移、&darr; 下移、 空格 坠落&darr;回车 暂停或继续</p> -->
+        <!-- <p><a href="../index.html">选择版本</a></p> -->
+      </div>
+    <script src="js/square.js"></script>
+    <script src="js/squareFactory.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/local.js"></script>
+    <script src="js/remote.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

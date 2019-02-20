@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>websocket</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"></script>
+
+</head>
+<style>
+    #recv {
+        margin-bottom: 30px;
+    }
+</style>
+
+<body>
+    <div>简约聊天</div>
+    <input type="text" id="sendTxt">
+    <button id="sendBtn">发送</button>
+    <!-- <div id="recv"></div> -->
+    <script>
+        function addInfo(txt, type) {
+            var div = document.createElement('div')
+            div.innerHTML = txt;
+            if (type == "enter") {
+                div.style.color = "blue";
+            } else if (type == "leave") {
+                div.style.color = "red";
+            }
+            document.body.appendChild(div)
+        }
+        var websocket = io("ws://localhost:3000")
+        document.getElementById('sendBtn').onclick = function () {//client发送信息到后台
+            var txt = document.getElementById('sendTxt').value;
+            websocket.emit('message', txt)
+        }
+        websocket.on('enter', function(data){
+            addInfo(data,'enter')
+        })
+        websocket.on('message', function(data){
+            addInfo(data,'message')
+        })     
+        websocket.on('leave', function(data){
+            addInfo(data,'leave')
+        })    
+
+    </script>
+</body>
+
+</html>

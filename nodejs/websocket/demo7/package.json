@@ -1,0 +1,23 @@
+{
+  "name": "websocket",
+  "version": "0.0.1",
+  "author": "tager",
+  "description": "first websocket程序",
+  "keywords": [
+    "node.js",
+    "javascript",
+    "websocket"
+  ],
+  "scripts": {
+    "server": "node webServer.js",
+    "ws": "node wsServer.js",
+    "dev": "concurrently \"npm run server\" \"npm run ws\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "nodejs-websocket": "^1.7.1",
+    "socket.io": "^2.0.4",
+    "vconsole": "^3.1.0"
+  }
+}

@@ -1,0 +1,92 @@
+.game{
+    width:200px;
+    height: 400px;
+    background: #f2faff;
+    border-left: 1px solid bule;
+    border-right: 1px solid bule;
+    border-bottom: 1px solid bule;
+    position: absolute;
+    top:10px;
+    left: 10px;
+    
+}
+#butGroup{
+    position: absolute;
+    top:440px;
+    left: 80px;
+}
+#butGroup button{
+position: absolute;
+padding: 10px;
+}
+
+#butGroup #butUp{
+    top: 0;
+    left: 0px;
+    padding: 10px 13px;
+}
+#butGroup #butDown{
+    top: 80px;
+    left: 0px;
+    padding: 10px 13px;
+}
+#butGroup #butFall{
+    top: 80px;
+    left: 145px;
+    padding: 10px 13px;
+}
+#butGroup #butLeft{
+    top: 35px;
+    left: -80px;
+}
+#butGroup #butRight{
+    top: 35px;
+    left: 85px;
+}
+
+.next{
+    width:80px;
+    height: 80px;
+    background:#f2faff;
+    position: absolute;
+    top:10px;
+    left: 250px;
+    border: 1px solid blue;
+
+}
+.info{
+    position: absolute;
+    top:100px;
+    left: 250px;
+}
+.tips{
+    position: absolute;
+    top:200px;
+    left: 250px;
+}
+#score,#time{
+    color: green;
+    font-weight: bold;
+}
+#local_gameover{
+    color: red;
+    font-size: 20px;
+    font-weight: bolder;
+}
+.none,.current,.done{
+    width:20px;
+    height: 20px;
+    position: absolute;
+    box-sizing: border-box;
+}
+.none{
+    background: #f2faff;
+}
+.current{
+    background: pink;
+    border: 1px solid red;
+}
+.done{
+    background: gray;
+    border: 1px solid black;
+}

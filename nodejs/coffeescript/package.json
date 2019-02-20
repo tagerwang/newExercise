@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "coffeescript": "http://github.com/jashkenas/coffee-script/tarball/master"
+  },
+  "scripts": {
+      "dev":"coffee -o lib/ -cw src/",
+      "predev":"coffee -bpe alert i for i in [0..10]"
+  }
+}

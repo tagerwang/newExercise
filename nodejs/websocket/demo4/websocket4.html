@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>websocket</title>
+</head>
+<style>
+    #recv{
+        margin-bottom: 30px;
+    }
+</style>
+<body>
+    <div>Echo Test</div>
+    <input type="text" id="sendTxt">
+    <button id="sendBtn">发送</button>
+    <!-- <div id="recv"></div> -->
+    <script>
+        function addInfo(txt,type) {
+            var div = document.createElement('div')
+            div.innerHTML = txt;
+            debugger;
+            if(type=="enter"){
+                div.style.color="blue";
+            }else if(type=="leave"){
+                div.style.color="red";
+            }
+            document.body.appendChild(div)
+        }
+        var websocket = new WebSocket("ws://localhost:8001")
+        websocket.onopen = function () {//直接建立连接
+            console.log('websocket open')
+            //document.getElementById("recv").innerHTML = "connect"//up text;
+            document.getElementById('sendBtn').onclick = function () {//client发送信息到后台
+                var txt = document.getElementById('sendTxt').value;
+                websocket.send(txt)
+            }
+        }
+        websocket.onclose = function () {//关闭连接
+            console.log('websocket close')
+        }
+        websocket.onmessage = function (e) {//获取server 返回的消息；
+            console.log(e.data, e)
+            var mes=JSON.parse(e.data)
+            //document.getElementById('recv').innerHTML = e.data//up text;
+            addInfo(mes.data,mes.type)//create text;
+        }
+
+    </script>
+</body>
+
+</html>
