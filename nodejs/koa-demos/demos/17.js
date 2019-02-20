@@ -6,7 +6,7 @@ const main = ctx => {
 };
 
 app.on('error', (err, ctx) => {
-  console.error('server error', err);
+  console.error('listener error server error', err);
 });
 
 app.use(main);
