@@ -7,7 +7,7 @@
 	返回值：1、当连接成功的时候返回mysql连接标识符
 			2、当连接失败的时候返回false
 	********************************************/
-	if($con = mysql_connect('localhost', 'root', '123')){
+	if($con = mysql_connect('localhost', 'root', 'root')){
 		//echo "连接成功";
 	}else{
 		//echo "连接失败";

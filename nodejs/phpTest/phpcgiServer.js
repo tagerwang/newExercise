@@ -11,7 +11,7 @@ var middleware = require('node-phpcgi')({
     location: /\.php($|\?)/,
     documentRoot: __dirname,
     // change it to your own handler path
-    handler: 'D:/software/php-7.1.14-Win32-VC14-x64thread/php-cgi'  //D:/software/php-7.1.14-Win32-VC14-x64thread/php-cgi   E:/wave/softpack/php7.1.9/php-cgi
+    handler: 'D:/software/php-7.3.2-Win32-VC15-x64/php-cgi'//'D:/software/php-7.1.14-Win32-VC14-x64thread/php-cgi'  //D:/software/php-7.1.14-Win32-VC14-x64thread/php-cgi   E:/wave/softpack/php7.1.9/php-cgi
 });
 
 app.all('*', function(req, res, next) {
