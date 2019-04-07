@@ -65,6 +65,8 @@ class Game extends React.Component {
         const winner = this.calculateWinner(current.squares);
       return (
         <div className="game">
+          tager: {this.props.tager}
+          <div>name: {this.props.name}</div>
           <div className="game-board">
             <Board 
             calculateWinner={this.calculateWinner}
