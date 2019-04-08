@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Board from './board';
 //import registerServiceWorker from './registerServiceWorker';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+console.log(Link)
 class Game extends React.Component {
     calculateWinner(squares){
         const lines=[
@@ -64,6 +66,7 @@ class Game extends React.Component {
         console.log(history,current.squares,'cur')
         const winner = this.calculateWinner(current.squares);
       return (
+        <Router>
         <div className="game">
           tager: {this.props.tager}
           <div>name: {this.props.name}</div>
@@ -78,7 +81,9 @@ class Game extends React.Component {
             <div>{/* status */}</div>
             <ol>{/* TODO */}</ol>
           </div>
+        {/* <Route path="/about" component={About} /> */}
         </div>
+      </Router>
       );
     }
   }
