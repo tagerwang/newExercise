@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Home from './home';
 import About from './about';
+import 'antd/dist/antd.css';
 // 首先我们需要导入一些组件...
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.css';
 //import registerServiceWorker from './registerServiceWorker';
+import { Button } from 'antd';
 class About extends React.Component {
 
     // constructor(){
@@ -14,6 +15,7 @@ class About extends React.Component {
     render() {
       return (
         <div>
+          <Button type="primary">Primary</Button>
           This is about page router !
         </div>
       );
