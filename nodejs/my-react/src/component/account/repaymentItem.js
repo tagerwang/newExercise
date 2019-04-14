@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Card, Row, Col } from "antd";
-const { Meta }  = Card
 class RepaymentItem extends Component {
     constructor (props) {
         super(props)

@@ -5,9 +5,9 @@ import Home from './home';
 import About from './about';
 import Account from './component/account';
 import 'antd/dist/antd.css';
-import B from "./component/decorator/B";
+// import B from "./component/decorator/B";
 // 首先我们需要导入一些组件...
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, HashRouter, Route } from 'react-router-dom'
 import store from "./store";
 import { Provider } from "react-redux";
 
@@ -29,9 +29,9 @@ import { Provider } from "react-redux";
 //     }
 //   }
 
-const App =  ReactDOM.render(
+ReactDOM.render(
   <Provider store={store}>
-  <Router>
+  <HashRouter>
     {/* <div><Link to="/home">Home</Link></div>
     <div><Link to="/about">About</Link></div>
     <div><Link to="/account">Account</Link></div> */}
@@ -40,7 +40,7 @@ const App =  ReactDOM.render(
     <Route path="/home" component={Home} />
     <Route path="/about" component={About} />
     <Route path="/account" component={Account} />
-  </Router>
+  </HashRouter>
   </Provider>
   , document.getElementById('root'));
   //registerServiceWorker();

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Header from "./head";
 import { Card, Tabs, Row, Col } from "antd";
 import { StickyContainer, Sticky } from 'react-sticky';
 import RefundItem from "./refundItem";

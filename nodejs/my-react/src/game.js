@@ -1,9 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
 import Board from './board';
 //import registerServiceWorker from './registerServiceWorker';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 console.log(Link)
 class Game extends React.Component {
     calculateWinner(squares){
@@ -64,7 +63,7 @@ class Game extends React.Component {
         const history = this.state.history;
         const current = history[history.length - 1];
         console.log(history,current.squares,'cur')
-        const winner = this.calculateWinner(current.squares);
+        // const winner = this.calculateWinner(current.squares);
       return (
         <Router>
         <div className="game">
