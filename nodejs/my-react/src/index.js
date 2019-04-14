@@ -32,11 +32,11 @@ import { Provider } from "react-redux";
 const App =  ReactDOM.render(
   <Provider store={store}>
   <Router>
-    <div><Link to="/home">Home</Link></div>
+    {/* <div><Link to="/home">Home</Link></div>
     <div><Link to="/about">About</Link></div>
-    <div><Link to="/account">Account</Link></div>
+    <div><Link to="/account">Account</Link></div> */}
     {/* 高阶组件 */}
-    <B/>
+    {/* <B/> */}
     <Route path="/home" component={Home} />
     <Route path="/about" component={About} />
     <Route path="/account" component={Account} />

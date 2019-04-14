@@ -16,7 +16,6 @@ class About extends React.Component {
         this.unsubscribe = store.subscribe(()=>{
           console.log(store.getState(), '====================')
           this.setState.count = store.getState().count
-          debugger
       })
       
     }
