@@ -3,9 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Home from './home';
 import About from './about';
+import Account from './component/account';
 import 'antd/dist/antd.css';
+import B from "./component/decorator/B";
 // 首先我们需要导入一些组件...
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import store from "./store";
+import { Provider } from "react-redux";
 
 //import registerServiceWorker from './registerServiceWorker';
 // class ShoppingList extends React.Component {
@@ -26,12 +30,18 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 //   }
 
 const App =  ReactDOM.render(
+  <Provider store={store}>
   <Router>
     <div><Link to="/home">Home</Link></div>
     <div><Link to="/about">About</Link></div>
+    <div><Link to="/account">Account</Link></div>
+    {/* 高阶组件 */}
+    <B/>
     <Route path="/home" component={Home} />
     <Route path="/about" component={About} />
+    <Route path="/account" component={Account} />
   </Router>
+  </Provider>
   , document.getElementById('root'));
   //registerServiceWorker();
 
