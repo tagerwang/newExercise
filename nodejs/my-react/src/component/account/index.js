@@ -21,7 +21,7 @@ class account extends Component {
             refundList: [],
             repaymentList: []
         }
-        fetch('/account.json').then(res=>{
+        fetch('./account.json').then(res=>{
             if(res.ok){
                 res.json().then(data=>{
                     this.setState({
