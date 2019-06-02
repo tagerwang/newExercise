@@ -1,0 +1,45 @@
+{
+    "refundList": [
+        {
+            "refundTime": "2019/02/15",
+            "refundAmount": "10000",
+            "interestDays": null,
+            "benj": null
+        },
+        {
+            "refundTime": "2019/03/15",
+            "refundAmount": "10000",
+            "interest": null,
+            "interestDays": 28,
+            "benj": null
+        },
+        {
+            "refundTime": "2019/04/11",
+            "refundAmount": "10000",
+            "interest": null,
+            "interestDays": 27,
+            "benj": null
+        },
+        {
+            "refundTime": "2019/05/16",
+            "refundAmount": "10000",
+            "interest": null,
+            "interestDays": 35,
+            "benj": null
+        }
+    ],
+    "repaymentList": [
+        {
+            "time": "2019/01/13",
+            "amount": "30000"
+        },
+        {
+            "time": "2019/01/18",
+            "amount": "30000"
+        },
+        {
+            "time": "2019/01/24",
+            "amount": "40000"
+        }
+    ]
+}
