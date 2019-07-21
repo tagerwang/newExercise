@@ -9,12 +9,14 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "animejs": "^3.0.1",
     "multi-cascader": "^1.1.0",
     "vue": "^2.0.1",
     "vue-localstorage": "^0.1.1",
     "vue-router": "^3.0.6"
   },
   "devDependencies": {
+    "animejs": "^3.0.1",
     "autoprefixer": "^6.4.0",
     "babel-core": "^6.0.0",
     "babel-loader": "^6.0.0",
