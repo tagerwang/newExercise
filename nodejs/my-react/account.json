@@ -26,7 +26,14 @@
             "interest": null,
             "interestDays": 35,
             "benj": null
-        }
+        },
+        {
+          "refundTime": "2019/06/17",
+          "refundAmount": "10000",
+          "interest": null,
+          "interestDays": 32,
+          "benj": null
+      }
     ],
     "repaymentList": [
         {
