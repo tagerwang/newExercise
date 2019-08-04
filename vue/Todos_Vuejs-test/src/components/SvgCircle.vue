@@ -4,7 +4,7 @@
  <div>
 <svg width="440" height="440" viewbox="0 0 440 440">
     <circle cx="220" cy="220" r="170" stroke-width="50" stroke="#D1D3D7" fill="none"></circle>
-    <circle cx="220" cy="220" r="170" stroke-width="50" stroke="blue" fill="none" transform-origin="220 220" :transform="`matrix(${matrix1})`"  stroke-dasharray="0 1069"></circle>
+    <circle cx="220" cy="220" r="170" stroke-width="50" stroke="blue" fill="none" transform-origin="220 220" :transform="`matrix(${matrix1})`"   stroke-dasharray="0 1069"></circle>
     <!-- <circle cx="220" cy="220" r="170" stroke-width="50" stroke="red" fill="none" transform="matrix(0,-1,1,0,0,440)" stroke-dasharray="100 1069"></circle> -->
     <!-- <circle cx="220" cy="220" r="170" stroke-width="50" stroke="#00A5E0" fill="none" transform="matrix(0,-1,1,0,0,440)" stroke-dasharray="100 1069"></circle> -->
 </svg>
@@ -14,7 +14,6 @@
 </template>
 
 <script>
-import anime from 'animejs'
  export default {
    data () {
      return {
