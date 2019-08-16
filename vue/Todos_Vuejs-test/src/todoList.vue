@@ -80,7 +80,6 @@ body {
   font-family: Helvetica, sans-serif;
 }
 #app {
-  width: 800px;
   margin: 30px auto;
 }
 #add-input {
