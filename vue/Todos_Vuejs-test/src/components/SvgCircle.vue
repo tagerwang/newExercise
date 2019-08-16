@@ -8,7 +8,7 @@
     <!-- <circle cx="220" cy="220" r="170" stroke-width="50" stroke="red" fill="none" transform="matrix(0,-1,1,0,0,440)" stroke-dasharray="100 1069"></circle> -->
     <!-- <circle cx="220" cy="220" r="170" stroke-width="50" stroke="#00A5E0" fill="none" transform="matrix(0,-1,1,0,0,440)" stroke-dasharray="100 1069"></circle> -->
 </svg>
-<p>拖我{{circleVal}}：<input id="range" type="range" min="0" max="100" :value="circleVal" style="width:300px;"></p>
+<p>拖我({{circleVal}}%)：<input id="range" type="range" min="0" max="100" v-model="circleVal" style="width:300px;"></p>
 
  </div>
 </template>
