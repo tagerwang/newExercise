@@ -21,7 +21,7 @@ class account extends Component {
             refundList: [],
             repaymentList: []
         }
-        fetch('./account.json').then(res=>{
+        fetch('/account.json').then(res=>{
             if(res.ok){
                 res.json().then(data=>{
                     this.setState({
@@ -89,7 +89,11 @@ class account extends Component {
                             <Row className = "refund-mb">
                                 <Col span={8}>其他</Col>
                                 <Col span={16} style={{textAlign: 'right'}}>免息借款金额5万,已还1万</Col>
-                            </Row>                   
+                            </Row>   
+                            <Row className = "refund-mb">
+                                <Col span={8}>总还款额(含利息)</Col>
+                                <Col span={16} style={{textAlign: 'right'}}>￥{this.state.paidTotal + this.state.interestTotal + 10000}</Col>
+                            </Row>                 
                         </Card>
                     </TabPane>
                     <TabPane tab="借款记录" key="2" style={{ height: 'auto' }}>
