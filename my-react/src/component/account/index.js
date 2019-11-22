@@ -12,6 +12,10 @@ const renderTabBar = (props, DefaultTabBar) => (
     )}
   </Sticky>
 );
+const onChangeTab = (activeKey) => {
+  console.warn(activeKey)
+  document.documentElement.scrollTop = document.body.scrollTop = 0
+}
 class account extends Component {
     constructor (props) {
         super(props)
@@ -62,7 +66,7 @@ class account extends Component {
     render() {
         return (
             <StickyContainer>
-                <Tabs defaultActiveKey="1" renderTabBar={renderTabBar}>
+                <Tabs defaultActiveKey="1" renderTabBar={renderTabBar} onChange={onChangeTab}>
                     <TabPane tab="还款记录" key="1" style={{ height: 'auto' }}>
                         <ul className = "refund-ul">
                             {this.state.refundList.map((item, index) => {
