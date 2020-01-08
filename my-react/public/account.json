@@ -40,7 +40,14 @@
         "interest": null,
         "interestDays": 158,
         "benj": null
-    }
+      },
+      {
+        "refundTime": "2020/01/07",
+        "refundAmount": "10000",
+        "interest": null,
+        "interestDays": 47,
+        "benj": null
+      }
     ],
     "repaymentList": [
         {
