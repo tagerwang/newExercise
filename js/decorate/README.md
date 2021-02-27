@@ -1,0 +1,1 @@
+npx babel index.js -o result.js
