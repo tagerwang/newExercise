@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "express": "^4.16.2",
+    "express": "^4.18.2",
     "node-phpcgi": "^0.3.7"
   }
 }
